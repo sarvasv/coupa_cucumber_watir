@@ -1,5 +1,9 @@
 Welcome to Coupa.com Watired Cuked :)
 
+ =========
+ = about =
+ =========
+ 
 This is a sample project to demonstrate automated functional testing using
 * cucumber (cukes.info)
 * watir (webdriver) (watir.com)
@@ -18,3 +22,11 @@ Please check with ramonrails [at] gmail [dot] com for more details
 Thanks for your time & attention
 
 Happy cuking! :)
+
+ ================
+ = installation =
+ ================
+ 
+ bundle install
+ bundle exec cucumber
+ 
