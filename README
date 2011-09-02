@@ -1,0 +1,20 @@
+Welcome to Coupa.com Watired Cuked :)
+
+This is a sample project to demonstrate automated functional testing using
+* cucumber (cukes.info)
+* watir (webdriver) (watir.com)
+
+optionally
+* rspec
+* ruby-debug
+
+deploying
+* cucumber hooks
+* environment configuration
+* running the browser instance "headless" using gem + environment variable
+* break at first failure using environment variable
+
+Please check with ramonrails [at] gmail [dot] com for more details
+Thanks for your time & attention
+
+Happy cuking! :)

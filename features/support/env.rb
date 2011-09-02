@@ -12,5 +12,4 @@ at_exit do
   if ENV['HEADLESS']
     headless.destroy
   end
-  # @browser.close if @browser
 end
