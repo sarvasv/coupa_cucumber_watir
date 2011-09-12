@@ -1,5 +1,7 @@
 Welcome to Coupa.com Watired Cuked :)
 
+This is a behavior driven black box functional testing project intended to be a demonstration of skills, quality and commitment at sarvasv.in
+
  =========
  = about =
  =========
@@ -27,6 +29,22 @@ Happy cuking! :)
  = installation =
  ================
  
- bundle install
- bundle exec cucumber
+git clone
+bundle install
  
+ ===============
+ = how to run? =
+ =============== 
+ 
+bundle exec cucumber
+bundle exec autotest (during development)
+
+ ==============
+ = contact us =
+ ==============
+ 
+ramonrails (Ram Kumar)
++91-95606-33544
+ramonrails @ skype, gtalk, linkedin, ... all major channels, apps, networks, or just a simple google search :)
+Sarvasv Technologies Private Limited, New Delhi, India
+sales @ sarvasv.in, support @ sarvasv.in
