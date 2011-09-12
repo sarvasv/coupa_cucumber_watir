@@ -22,6 +22,30 @@ end
 # = whens =
 # =========
 
+When /^I wait for popup "([^"]*)"$/ do |_popup_class|
+  # 
+  #  Tue Sep 13 02:52:47 IST 2011, ramonrails
+  #   * design flaw? page had multiple divs with that class
+  #   * Upon submission, the DIVs stayed on page, invisible. This added to confusion why watir could not find the popup
+  Watir::Wait.until { @browser.divs( :class => _popup_class).any?(&:visible?) }
+end
+
+When /^I click link in "([^"]*)"$/ do |_popup_class|
+  @browser.divs( :class => _popup_class).each { |_div| _div.link.click if _div.visible? }
+end
+
+When /^I submit the (\d+)st product$/ do |_nth|
+  @browser.div( :class => "search-line-fields").form().button().click
+end
+
+When /^I follow "([^"]*)"$/ do |_link_text|
+  @browser.link( :text => _link_text).when_present.click
+end
+
+When /^I mouseover navigation "([^"]*)"$/ do |_menu_name|
+  @browser.nav( :id => "secondary").a( :text => _menu_name).parent().fire_event("onmouseover")
+end
+
 When /^I visit "([^"]*)"$/ do |_url|
   @browser.goto _url
 end
@@ -38,3 +62,6 @@ end
 # = thens =
 # =========
 
+Then /^I should see "([^"]*)"$/ do |text|
+  text.split(',').compact.uniq.collect(&:strip).each {|e| @browser.text.should include("Sign Out") }
+end
