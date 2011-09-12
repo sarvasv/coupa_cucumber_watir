@@ -16,4 +16,13 @@ Feature: Pilot test
     And I wait for popup "popOver"
     And I click link in "popOver"
     Then I should see "Take a Tour!"
+    When I follow "pick_address_link" class link
+    And I wait for DIV with text "Choose an Address"
+    And I follow "rollover button" class link
+    And I follow "account_picker_popup_button" class link
+    And I wait for DIV with text "Choose an account"
+    And I follow "rollover button" class link
+    And I click button "submit_for_approval_link"
+    And I wait for DIV "flash_container" to be visible
+    Then DIV class "innerbox" contains "submitted for"
     

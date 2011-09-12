@@ -22,6 +22,18 @@ end
 # = whens =
 # =========
 
+When /^I wait for DIV with text "([^"]*)"$/ do |_text|
+  Watir::Wait.until { @browser.div( :text => _text) }
+end
+
+When /^I wait for DIV "([^"]*)" to be visible$/ do |_div_id|
+  Watir::Wait.until { @browser.div( :id => _div_id).visible? }
+end
+
+When /^I click button "([^"]*)"$/ do |_button_id|
+  @browser.button( :id => _button_id).click
+end
+
 When /^I wait for popup "([^"]*)"$/ do |_popup_class|
   # 
   #  Tue Sep 13 02:52:47 IST 2011, ramonrails
@@ -36,6 +48,10 @@ end
 
 When /^I submit the (\d+)st product$/ do |_nth|
   @browser.div( :class => "search-line-fields").form().button().click
+end
+
+When /^I follow "([^"]*)" class link$/ do |_link_class|
+  @browser.link( :class => _link_class).when_present.click
 end
 
 When /^I follow "([^"]*)"$/ do |_link_text|
@@ -61,6 +77,10 @@ end
 # =========
 # = thens =
 # =========
+
+Then /^DIV class "([^"]*)" contains "([^"]*)"$/ do |_div_class, _text|
+  @browser.div( :class => _div_class).text.should include( _text)
+end
 
 Then /^I should see "([^"]*)"$/ do |text|
   text.split(',').compact.uniq.collect(&:strip).each {|e| @browser.text.should include("Sign Out") }
