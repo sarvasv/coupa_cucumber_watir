@@ -5,9 +5,9 @@ Feature: Pilot test
   
   Scenario: login and check a few things as demo given
     Given I have a test browser running
-    When I visit "ENV['COUPA_APP_URL']"
-    And I fill in "user_login" with "ENV['COUPA_LOGIN']"
-    And I fill in "user_password" with "ENV['COUPA_password']"
+    When I visit "coupa_application_url"
+    And I fill in "user_login" with "coupa_login"
+    And I fill in "user_password" with "coupa_password"
     And I press the button
     Then I should see "Sign Out, My Account"
     When I mouseover navigation "Catalogs"
